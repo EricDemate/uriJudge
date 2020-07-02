@@ -1,0 +1,30 @@
+Git: como remover arquivo remoto
+https://blog.ffelix.eti.br/git-como-remover-arquivo-remoto/
+ 
+27 de setembro de 2017
+
+Apenas uma dica rápida para ajudar o desmemoriado aqui e vai que de lambuja acabo ajudando 
+outras pessoas que tenham a mesma dúvida que eu também: Dei um commit em um de meus projetos 
+no Github e só depois disso percebi que algumas pastas e arquivos não precisavam ficar assim lá
+disponíveis publicamente, então obviamente, precisei removê-los do repositório remoto, porém em
+minha máquina local eu preciso que elas continuem.
+
+Segue aqui então um pequeno passo-a-passo para resolver esta situação:
+
+1. Primeiramente, vamos nos certificar de que o repositório local está sincronizado com o 
+repositório remoto (aqui estamos nos baseando de que o branch atual seja o master):
+
+
+$ git pull origin master
+2. Vamos então remover a pasta e/ou os arquivos:
+
+
+$ git rm -r Arquivo Pasta
+3. Em seguida fazemos o commit da modificação:
+
+
+$ git commit -m "Remove Arquivo e Pasta"
+4. E finalmente: sincronizamos com o repositório remoto:
+
+
+$ git push origin master
